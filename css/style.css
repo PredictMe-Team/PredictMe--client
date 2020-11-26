@@ -1,0 +1,41 @@
+.container { 
+    width: 100%; 
+    margin-top: 100px;
+    margin-bottom: 100px;
+    border-radius: 20px;
+    
+}
+
+#form-signUp {
+    padding: 5%;
+    margin-top: 35%;
+    box-shadow: 0px 0px 10px;
+    position: relative;
+    right: 200%;
+    border-radius: 2%;
+}
+
+.head-login {
+    position: absolute;
+    top: 52%;
+    left: 60%;
+    color: #131010;
+    font-family: 'Knewave', cursive;
+}
+
+.head-register {
+    position: absolute;
+    top: 43%;
+    left: 64%;
+    color: #ffffff;
+    font-family: 'Knewave', cursive;
+}
+
+#form-signIn {
+    padding: 5%;
+    margin-top: 24%;
+    box-shadow: 0px 0px 10px;
+    position: relative;
+    right: 200%;
+    border-radius: 2%;
+}
