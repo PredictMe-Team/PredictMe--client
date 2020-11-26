@@ -27,28 +27,30 @@
             </div>
             <div class="col-sm-4">
                 <div id="form-signUp">
-                    <form method="POST">
+                    <form method="" id="f-signUp">
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="email" class="form-control form-control-sm" name="name">
+                            <input type="text" class="form-control form-control-sm" name="name" id="signup-name">
                             <small class="form-text" style="color: #FFA863;">enter your name</small>
                         </div>
                         <div class="form-group">
                             <label for="email">Email Address</label>
-                            <input type="email" class="form-control form-control-sm" name="email">
+                            <input type="email" class="form-control form-control-sm" name="email" id="signup-email">
                             <small class="form-text" style="color: #FFA863;">We'll never share your email with anyone
                                 else</small>
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input type="password" class="form-control form-control-sm" name="password">
+                            <input type="password" class="form-control form-control-sm" name="password" id="signup-password">
                             <small class="form-text" style="color: #FFA863;">enter your password</small>
                         </div>
-                        <button type="submit" class="btn btn-outline-info btn-sm">Submit</button>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-outline-info btn-sm">Submit</button>
+                        </div>
                         <div align="center">
                             <br>
                             <span><small>have an account ?</small></span>
-                            <a href="/login"><small>SignIn</small></a>
+                            <a href="" id="link-signIn"><small>SignIn</small></a>
                         </div>
                     </form>
                 </div>
@@ -67,23 +69,23 @@
             </div>
             <div class="col-sm-4">
                 <div id="form-signIn">
-                    <form method="POST">
+                    <form method="" id="f-signIn">
                         <div class="form-group">
                             <label for="email">Email Address</label>
-                            <input type="email" class="form-control form-control-sm" name="email">
+                            <input type="email" class="form-control form-control-sm" name="email" id="signin-email">
                             <small class="form-text" style="color: #FFA863;">We'll never share your email with anyone
                                 else</small>
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input type="password" class="form-control form-control-sm" name="password">
+                            <input type="password" class="form-control form-control-sm" name="password" id="signin-password">
                             <small class="form-text" style="color: #FFA863;">enter your password</small>
                         </div>
                         <button type="submit" class="btn btn-outline-info btn-sm">Log In</button>
                         <div align="center">
                             <br>
                             <span><small>don't have an account ?</small></span>
-                            <a href="/register"><small>SignUp</small></a>
+                            <a href="" id="link-signUp"><small>SignUp</small></a>
                         </div>
                     </form>
                 </div>
@@ -91,7 +93,7 @@
         </div>
     </div>
 
-    <div class="container" id="signIn-page" style="background-color: rgba(255, 168, 97, 0.07);">
+    <div class="container" id="content-page" style="background-color: rgba(255, 168, 97, 0.07);">
         <nav class="navbar navbar-expand-lg navbar-light">
             <a class="navbar-brand" href="#">
                 <h2 style="color: #FFA863;">Predict Me!</h2>
@@ -102,59 +104,55 @@
                     <li class="nav-item"></li>
                     <li class="nav-item"></li>
                 </ul>
-                <form class="form-inline my-2 my-lg-0">
+                <form class="form-inline my-2 my-lg-0" id="form-signOut">
                     <button class="btn btn-outline-danger btn-sm my-2 my-sm-0" type="submit">Log Out</button>
                 </form>
             </div>
         </nav>
-        <div class="container">
-            <form class="form-inline" style="margin-top: -4%; margin-left: 30%;">
+        <div class="container" >
+            <form class="form-inline" style="margin-top: -4%; margin-left: 30%;" method="" id="form-content">
                 <div class="form-group">
-                    <label for="name">Sugestion Name</label>
-                    <input type="password" id="inputPassword6" class="form-control mx-sm-3" name="name">
-                    <button type="button" class="btn btn-outline-dark btn-sm">try</button>
+                    <label for="name">Sugesstion Name</label>
+                    <input type="text" class="form-control mx-sm-3" name="name" id="content-name">
+                    <button type="submit" class="btn btn-outline-dark btn-sm">try</button>
                 </div>
             </form>
         </div>
-        <div class="container">
+        <div class="container" >
             <div class="row">
                 <div class="col">
                     <div class="card border-warning mb-3" style="max-width: 20rem;">
                         <div class="card-header">Gender</div>
-                        <div class="card-body">
+                        <div class="card-body" >
                             <h5 class="card-title">Warning card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
+                            <p class="card-text" id="data-gender"></p>
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card border-info mb-3" style="max-width: 18rem;">
                         <div class="card-header">Age</div>
-                        <div class="card-body">
+                        <div class="card-body" >
                             <h5 class="card-title">Info card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
+                            <p class="card-text" id="data-age"></p>
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card border-success mb-3" style="max-width: 18rem;">
                         <div class="card-header">Nationality</div>
-                        <div class="card-body">
+                        <div class="card-body" >
                             <h5 class="card-title">Success card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
+                            <p class="card-text" id="data-nationality"></p>
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card border-primary mb-3" style="max-width: 18rem;">
-                        <div class="card-header">Recomend For You</div>
+                        <div class="card-header" >Recomend For You</div>
                         <div class="card-body">
-                            <h5 class="card-title">Primary card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
+                            <div class="container-fluid" id="data-image">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -169,6 +167,144 @@
         crossorigin="anonymous"></script>
     <script>
 
+        if(localStorage.getItem('access_token')){
+            showContentPage()
+        }else{
+            showSignInPage()
+        }
+
+        function showSignInPage(){
+            $("#signIn-page").show()
+            $("#signUp-page").hide()
+            $("#content-page").hide()
+        }
+
+        function showSignUpPage(){
+            $("#signIn-page").hide()
+            $("#signUp-page").show()
+            $("#content-page").hide()
+        }
+
+        function showContentPage(){
+            $("#signIn-page").hide()
+            $("#signUp-page").hide()
+            $("#content-page").show()
+        }
+
+        function signin(){
+            let email = $("#signin-email").val()
+            let password = $("#signin-password").val()
+
+            $.ajax({
+              type: "POST",
+              url: "http://localhost:3000/login",
+              data: {
+                  email,
+                  password
+              }  
+            })
+            .done(data => {
+                localStorage.setItem('access_token', data.access_token)
+                showContentPage()
+            })
+            .fail((xhr, text) => {
+                console.log(text)
+            })
+            .always(() => {
+                $("#f-signIn").trigger("reset")
+            })
+        }
+
+        function signup(){
+            let name = $("#signup-name").val()
+            let email = $("#signup-email").val()
+            let password = $("#signup-password").val()
+
+            $.ajax({
+              type: "POST",
+              url: "http://localhost:3000/register",
+              data: {
+                  name,
+                  email,
+                  password
+              }  
+            })
+            .done(data => {
+                console.log(data)
+                showSignInPage()
+            })
+            .fail((xhr, text) => {
+                console.log(text)
+            })
+            .always(() => {
+                $("#f-signUp").trigger("reset")
+            })
+        }
+
+        function signout(){
+            localStorage.clear()
+            showSignInPage()
+        }
+
+        function getdata(){
+            let name = $("#content-name").val()
+
+            $.ajax({
+               type: 'POST',
+               url: "http://localhost:3000/predict",
+               data: {
+                    name: name
+               },
+               headers: {
+                   access_token: localStorage.getItem('access_token')
+               }
+            })
+            .done(data => {
+                $("#data-gender").empty()
+                $("#data-age").empty()
+                $("#data-nationality").empty()
+                $("#data-image").empty()
+
+                $("#data-gender").append(`${data.gender}`)
+                $("#data-age").append(`${data.age}`)
+                $("#data-nationality").append(`${data.country}`)
+                $("#data-image").append(`<img src=${data.url} alt="" class="img-fluid">`)
+                console.log(data)
+            })
+            .fail((xhr, text) => {
+                console.log(text)
+            })
+            .always(() => {
+                $("#form-content").trigger("reset")
+            })
+        }
+
+        $(document).ready(function(){
+            $("#form-signIn").on("submit", (e) => {
+                e.preventDefault()
+                signin()
+            })
+            $("#form-signUp").on("submit", (e) => {
+                e.preventDefault()
+                signup()
+            })
+            $("#form-signOut").on("submit", (e) => {
+                e.preventDefault()
+                signout()
+            })
+            $("#form-content").on("submit", (e) => {
+                e.preventDefault()
+                getdata()
+            })
+            $("#link-signUp").on("click", (e) => {
+                e.preventDefault()
+                showSignUpPage()
+            })
+            $("#link-signIn").on("click", (e) => {
+                e.preventDefault()
+                showSignInPage()
+            })
+        })
     </script>
 </body>
 
