@@ -204,12 +204,14 @@
         }
 
         function showSignInPage() {
+            $(".preloader").hide();
             $("#signIn-page").show()
             $("#signUp-page").hide()
             $("#content-page").hide()
         }
 
         function showSignUpPage() {
+            $(".preloader").hide();
             $("#signIn-page").hide()
             $("#signUp-page").show()
             $("#content-page").hide()
@@ -279,6 +281,10 @@
             auth2.signOut().then(function () {
                 console.log('User signed out.');
             });
+            $("#data-gender").empty()
+            $("#data-age").empty()
+            $("#data-nationality").empty()
+            $("#data-image").empty()
         }
 
         function getdata() {
