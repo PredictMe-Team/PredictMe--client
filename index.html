@@ -13,11 +13,17 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Knewave&display=swap" rel="stylesheet">
-    <title>Hello, Me!</title>
+</head>
+<title>Hello, Me!</title>
 </head>
 
 <body>
-
+    <div class="preloader">
+        <div class="loading">
+            <img src="img/loading.gif" width="80">
+            <p>Harap Tunggu</p>
+        </div>
+    </div>
 
     <div class="container" id="signUp-page">
         <div class="row">
@@ -118,7 +124,7 @@
         <div class="container">
             <form class="form-inline" style="margin-top: -4%; margin-left: 30%;" method="" id="form-content">
                 <div class="form-group">
-                    <label for="name">Sugesstion Name</label>
+                    <label for="name">input your name</label>
                     <input type="text" class="form-control mx-sm-3" name="name" id="content-name">
                     <button type="submit" class="btn btn-outline-dark btn-sm">try</button>
                 </div>
@@ -128,34 +134,31 @@
             <div class="row">
                 <div class="col">
                     <div class="card border-warning mb-3" style="max-width: 20rem;">
-                        <div class="card-header">Gender</div>
+                        <div class="card-header"><strong>Gender</strong></div>
                         <div class="card-body">
-                            <h5 class="card-title">Warning card title</h5>
-                            <p class="card-text" id="data-gender"></p>
+                            <h3 class="card-text" id="data-gender" align="center"></h3>
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card border-info mb-3" style="max-width: 18rem;">
-                        <div class="card-header">Age</div>
+                        <div class="card-header"><strong>Age</strong></div>
                         <div class="card-body">
-                            <h5 class="card-title">Info card title</h5>
-                            <p class="card-text" id="data-age"></p>
+                            <h3 class="card-text" id="data-age" align="center"></h3>
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card border-success mb-3" style="max-width: 18rem;">
-                        <div class="card-header">Nationality</div>
+                        <div class="card-header"><strong>Nationality</strong></div>
                         <div class="card-body">
-                            <h5 class="card-title">Success card title</h5>
-                            <p class="card-text" id="data-nationality"></p>
+                            <h3 class="card-text" id="data-nationality" align="center"></h3>
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card border-primary mb-3" style="max-width: 18rem;">
-                        <div class="card-header">Recomend For You</div>
+                        <div class="card-header"><strong>Current Mood</strong></div>
                         <div class="card-body">
                             <div class="container-fluid" id="data-image">
                             </div>
@@ -176,24 +179,6 @@
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
         crossorigin="anonymous"></script>
     <script>
-        /* google */
-        function onSuccess(googleUser) {
-            console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
-        }
-        function onFailure(error) {
-            console.log(error);
-        }
-        function renderButton() {
-            gapi.signin2.render('my-signin2', {
-                'scope': 'profile email',
-                'width': 240,
-                'height': 50,
-                'longtitle': true,
-                'theme': 'dark',
-                'onsuccess': onSuccess,
-                'onfailure': onFailure
-            });
-        }
         function onSignIn(googleUser) {
             const googleToken = googleUser.getAuthResponse().id_token;
             $.ajax({
@@ -203,13 +188,13 @@
                     googleToken
                 }
             })
-            .done(response => {
-                localStorage.setItem('access_token', response.access_token)
-                showContentPage()
-            })
-            .fail(err => {
-                console.log(err);
-            })
+                .done(response => {
+                    localStorage.setItem('access_token', response.access_token)
+                    showContentPage()
+                })
+                .fail(err => {
+                    console.log(err);
+                })
         }
         /* google */
         if (localStorage.getItem('access_token')) {
@@ -231,6 +216,7 @@
         }
 
         function showContentPage() {
+            $(".preloader").hide();
             $("#signIn-page").hide()
             $("#signUp-page").hide()
             $("#content-page").show()
@@ -297,7 +283,7 @@
 
         function getdata() {
             let name = $("#content-name").val()
-
+            $(".preloader").show();
             $.ajax({
                 type: 'POST',
                 url: "http://localhost:3000/predict",
@@ -309,18 +295,18 @@
                 }
             })
                 .done(data => {
+                    $(".preloader").fadeOut();
                     $("#data-gender").empty()
                     $("#data-age").empty()
                     $("#data-nationality").empty()
                     $("#data-image").empty()
-
                     $("#data-gender").append(`${data.gender}`)
                     $("#data-age").append(`${data.age}`)
                     $("#data-nationality").append(`${data.country}`)
                     $("#data-image").append(`<img src=${data.url} alt="" class="img-fluid">`)
-                    console.log(data)
                 })
                 .fail((xhr, text) => {
+                    $(".preloader").fadeOut();
                     console.log(text)
                 })
                 .always(() => {
