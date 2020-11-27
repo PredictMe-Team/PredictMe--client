@@ -39,3 +39,14 @@
     right: 200%;
     border-radius: 2%;
 }
+
+#signIn-page {
+    margin-top: 10%;
+}
+
+/* google */
+.g-signin2 {
+    position: relative;
+    margin-top: -11%;
+    margin-left: 80%;
+}
