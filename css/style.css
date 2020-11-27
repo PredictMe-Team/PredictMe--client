@@ -1,0 +1,71 @@
+.container { 
+    width: 100%; 
+    margin-top: 100px;
+    margin-bottom: 100px;
+    border-radius: 20px;
+    
+}
+
+#form-signUp {
+    padding: 5%;
+    margin-top: 35%;
+    box-shadow: 0px 0px 10px;
+    position: relative;
+    right: 200%;
+    border-radius: 2%;
+}
+
+.head-login {
+    position: absolute;
+    top: 52%;
+    left: 60%;
+    color: #131010;
+    font-family: 'Knewave', cursive;
+}
+
+.head-register {
+    position: absolute;
+    top: 43%;
+    left: 64%;
+    color: #ffffff;
+    font-family: 'Knewave', cursive;
+}
+
+#form-signIn {
+    padding: 5%;
+    margin-top: 24%;
+    box-shadow: 0px 0px 10px;
+    position: relative;
+    right: 200%;
+    border-radius: 2%;
+}
+
+#signIn-page {
+    margin-top: 10%;
+}
+
+/* google */
+.g-signin2 {
+    position: relative;
+    margin-top: -11%;
+    margin-left: 80%;
+}
+
+/* loading */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color: #fff;
+    opacity: 70%;
+}
+.preloader .loading {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    font: 14px arial;
+}
